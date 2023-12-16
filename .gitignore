@@ -1,0 +1,37 @@
+.DS_Store
+
+# General
+*.log
+*.aux
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.blg
+*.bbl
+*.ind
+*.idx
+*.ilg
+*.brf
+*.nav
+*.snm
+*.vrb
+*.dvi
+*.ps
+*.tex~
+
+# TeXstudio (an IDE for LaTeX)
+*.tex.bak
+*.backup
+
+# Other files
+*.thm
+*.run.xml
+*.bcf
+
+# Directories
+_build/
+bin/

@@ -1,0 +1,210 @@
+\documentclass[12pt,nottoc]{book}
+\raggedbottom
+%
+% To compile with new pagination, delete the following files:
+% consensus.aux, consensus.idx
+% Run pdflatex twice
+% run makeindex
+% run pdflatex twice more
+% delete consensus.idx
+% run pdflatex twice more
+% run makeindex again
+% run pdflatex twice more
+
+%\usepackage{fullpage}
+
+% get rid of most widows and orphans
+\widowpenalty=10000
+\clubpenalty=10000
+
+\usepackage{graphicx}
+
+\usepackage{makeidx}
+
+\usepackage{tocbibind}
+
+\usepackage{multicol}
+
+\usepackage{float}
+%\floatstyle{boxed}
+%\restylefloat{figure}
+
+%\usepackage[papersize={5.5in,8.5in}]{geometry}
+
+% clear header style on the last empty odd pages
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else  %
+  \hbox{}
+  \thispagestyle{empty} 
+  \newpage 
+  \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
+%create a command forr lists with less space between the items
+\newcommand{\squishlist}{
+   \begin{list}{}
+    { \setlength{\itemsep}{0pt}      \setlength{\parsep}{1pt}
+      \setlength{\topsep}{2pt}       \setlength{\partopsep}{0pt}
+      \setlength{\leftmargin}{1.5em} \setlength{\labelwidth}{1em}
+      \setlength{\labelsep}{0em} } }
+
+\newcommand{\squishlisttwo}{
+   \begin{list}{}
+    { \setlength{\itemsep}{0pt}    \setlength{\parsep}{0pt}
+      \setlength{\topsep}{0pt}     \setlength{\partopsep}{0pt}
+      \setlength{\leftmargin}{2em} \setlength{\labelwidth}{1.5em}
+      \setlength{\labelsep}{0em} } }
+
+\newcommand{\squishend}{
+    \end{list}  }
+\newcommand{\squishitemize}{
+\begin{list}{\labelitemi}
+	{ \setlength{\itemsep}{0pt}      \setlength{\parsep}{.5pt}
+      \setlength{\topsep}{1pt}       \setlength{\partopsep}{0pt}
+      \setlength{\leftmargin}{1.5em} \setlength{\labelwidth}{1em}
+      \setlength{\labelsep}{0.5em} }}
+\newcommand{\squishitemizetwo}{
+\begin{list}{\labelitemii}
+	{ \setlength{\itemsep}{0pt}      \setlength{\parsep}{0pt}
+      \setlength{\topsep}{0pt}       \setlength{\partopsep}{0pt}
+      \setlength{\leftmargin}{2em} \setlength{\labelwidth}{1.5em}
+      \setlength{\labelsep}{0.5em} }}
+
+\newlength{\holdingplace}
+\setlength{\holdingplace}{\oddsidemargin}
+\setlength{\oddsidemargin}{\evensidemargin}
+\setlength{\evensidemargin}{\holdingplace}
+
+\author{C. T. Lawrence Butler \and Amy Rothstein}
+\title{On Conflict and Consensus\\ \large A Handbook on Formal
+  Consensus Decisionmaking}
+\date{1987-2023}
+% After the first five copies printed by Venn Sage Wylder:
+% Please send $3 to C. T. Butler for each copy of this book.
+
+\newcommand{\mc}[1]{\multicolumn{2}{l}{#1}}
+
+\makeindex
+
+\begin{document}
+\frontmatter
+\pagestyle{empty}
+\maketitle
+
+{\footnotesize
+\section*{License and Attributions}
+\noindent{}The text of this book was written by C.T. Lawrence Butler and Amy
+Rothstein, copyright \copyright{} 1987-2023 by C.T. Butler.\\
+
+\noindent{}Cover art on the printed version is by Keith McHenry.\\
+
+\noindent{}The flowchart in figure \ref{fig:flowchart} is a product of collaboration between C.T. Butler, Nathaniel Whitestone, and Venn Sage Wylder, and contains material and/or design that is copyright \copyright{} 2007 by each of them.\\
+
+\noindent{}The layout of this third edition was done by Venn Sage Wylder in 2007 using the \LaTeX{} typesetting engine.\\
+
+\noindent{}In 2023, for the v3.1.0 release, Mx Wylder assigned the Third Edition a semantic version number (v3.0.0), updated the source files with their own (Mx Wylder's) up-to-date legal name, updated contact information for CT Butler, established a new online repository for the source files on github, updated the license from CC-BY-NC-SA 3.0 USA to CC-BY-NC-SA 4.0 International, re-typeset the document with all these updates, and uploaded the source files and the PDF output to the new github repository.\\
+
+\noindent{}This work is licensed under Attribution-NonCommercial-ShareAlike 4.0 International. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/\\
+
+\noindent{}Third Edition --- Thirteenth Printing --- v3.1.0\\
+
+}
+
+
+\chapter*{Acknowledgments}
+{\footnotesize
+\input{0-front/acknowledgments}
+
+}
+
+\chapter*{On War and Peace}
+\input{0-front/epigraph}
+
+
+{\small
+\tableofcontents
+\listoffigures
+
+}
+
+\chapter*{Preface}
+{\small
+\input{0-front/preface}
+
+}
+
+\mainmatter
+\pagestyle{headings}
+\part{On Conflict and Consensus}
+
+\chapter[Introduction]{\index{introduction}Introduction: The Advantages of Formal
+  Consensus}
+\input{1-advantages/advantages}
+
+\chapter{On \index{decisionmaking}Decisionmaking}
+\input{2-decisions/decisions}
+
+\chapter{On Conflict \& Consensus}
+\input{3-conflict-and-consensus/conflict-and-consensus}
+
+\chapter{The Art of \index{evaluation}Evaluation}
+\input{4-evaluation/evaluation}
+
+\chapter{\index{role}Roles}
+\input{5-roles/roles}
+
+\chapter{\index{techniques}Techniques}
+\input{6-techniques/techniques}
+
+\part{Four Founding Documents}
+\setcounter{chapter}{0}
+%\input{7-orgdocs/orgdocs}
+\chapter*{Generic Versions of Four Founding Documents}
+\input{7-orgdocs/fourdocs}
+
+\chapter[Vision Statement]{Generic Vision Statements}
+\input{7-orgdocs/visionstatement}
+
+\chapter[Principles]{Generic Principles}
+\input{7-orgdocs/principles}
+
+\chapter[Bylaws]{Generic Nonprofit Bylaws}
+\input{7-orgdocs/bylaws}
+
+\chapter[\index{structure}Structure]{Generic Organizational \index{structure}Structure}
+\input{7-orgdocs/structure}
+
+
+\part{Essays}
+\setcounter{chapter}{0}
+\chapter{Consensus Revisited} % (fold)
+\label{cha:consensus_revisited}
+\input{8-essays/consensus-revisited}
+% chapter consensus_revisited (end)
+
+\chapter[Revolutionary Process]{A Revolutionary Decision-Making Process}
+\input{8-essays/revolutionary}
+
+\backmatter
+
+\chapter{Glossary}
+\input{9-back/glossary}
+
+\bibliographystyle{plain}
+
+\nocite{*}
+
+\bibliography{9-back/bibliography}
+
+\printindex
+
+\chapter{About the Author}
+\input{9-back/bio}
+
+\chapter*{Obtaining Copies}
+{\footnotesize
+\pagestyle{plain}
+\input{0-front/legal}
+
+}
+\end{document}
