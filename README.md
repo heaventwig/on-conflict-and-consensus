@@ -20,7 +20,7 @@ This repository contains the source files, images, and the compiled PDF of the b
 - **PDF:** The final compiled version of the book.
 
 ## License
-This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. For more details, see the LICENSE file in this repository.
+This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC-BY-NC-SA). For more details, see the LICENSE file in this repository.
 
 ## How to Use This Repository
 - **For Reading:** Download the PDF version.
